@@ -2,8 +2,8 @@
 var game = null
 
 function setup(){
-    createCanvas( 1000, 750 )
-    game = new Game( 40, 30 )
+    createCanvas( 500, 500 )
+    game = new Game( 35, 35 )
 }
 
 function draw(){

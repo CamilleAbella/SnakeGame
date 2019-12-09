@@ -37,6 +37,7 @@ class Game {
         this.apple.draw()
         fill(255)
         textSize(20)
+        textAlign(CENTER)
         text(`Score : ${this.score}`, width / 2, 20)
     }
 
@@ -55,11 +56,13 @@ class Game {
                 this.snake.head.y < 0 || this.snake.head.y >= this.grid.height
             )
         ){
-            this.scores.push({
+            const score = {
                 score: this.score,
                 date: Date.now(),
                 duration: Date.now() - this.startedTime
-            })
+            }
+            this.scores.push(score)
+            console.log(score)
             if(this.highscore < this.score){
                 this.highscore = this.score
             }
