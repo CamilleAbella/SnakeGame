@@ -3,6 +3,7 @@ class Apple extends Cell {
 
     constructor( grid ){
         super( grid )
+        this.image = loadImage('img/apple.png')
         this.respawn()
     }
 
@@ -12,8 +13,13 @@ class Apple extends Cell {
     }
 
     draw(){
-        noStroke()
-        this.rect(255,0,0)
+        const position = this.grid.toPixel( this, true )
+        image( this.image, 
+            position.x + (this.grid.cellWidth / 3),
+            position.y,
+            this.grid.cellWidth * 1.5,
+            this.grid.cellHeight * 1.5 
+        )
     }
 
 }

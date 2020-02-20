@@ -1,6 +1,6 @@
 
 class Snake {
-    
+
     constructor( grid, direction ){
         this.rate = 100
         this.time = Date.now()
@@ -23,10 +23,10 @@ class Snake {
         this.head.draw()
     }
 
-    step( direction ){
-        this.head.step()
-        this.head.x += direction.x
-        this.head.y += direction.y
+    step( parent ){
+        this.head.step( parent )
+        this.head.x += parent.x
+        this.head.y += parent.y
     }
 
     addChild(){
@@ -35,6 +35,10 @@ class Snake {
 
     touch( position ){
         return this.head.touch( position )
+    }
+
+    forEach( callback ){
+        this.head.each(callback)
     }
 
 }
